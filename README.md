@@ -8,7 +8,7 @@
 
 Community hub for bug reports, feature requests, and product feedback
 
-[![Version](https://img.shields.io/badge/version-v0.8.5--stable-2d6a4f?style=for-the-badge)](https://glitch.vritrasec.com/download/)
+[![Version](https://img.shields.io/badge/version-v0.9.0--stable-2d6a4f?style=for-the-badge)](https://glitch.vritrasec.com/download/)
 [![Platform](https://img.shields.io/badge/platform-Linux%20amd64%20%7C%20arm64-4a5568?style=for-the-badge)](https://glitch.vritrasec.com/docs/installation/)
 [![Website](https://img.shields.io/badge/website-glitch.vritrasec.com-2d6a4f?style=for-the-badge)](https://glitch.vritrasec.com/)
 
@@ -52,11 +52,11 @@ This repository serves as the **official community hub** for [Glitch AI Engine](
 
 **Glitch AI Engine** is a production desktop terminal for Linux, developed by **Alex Butler** at **[Vritra Security Organization](https://vritrasec.com)** (VritraSec).
 
-Unlike chat-first terminal wrappers, Glitch runs your **native system shell** (bash, zsh, or your configured login shell) inside a modern workspace augmented by a built-in **Glitch AI** assistant panel.
+Unlike chat-first terminal wrappers, Glitch runs your **preferred native shell** (bash, zsh, or any shell from `/etc/shells`) inside a modern workspace augmented by a built-in **Glitch AI** assistant panel.
 
 | Property | Value |
 |----------|-------|
-| Release | `v0.8.5-stable` |
+| Release | `v0.9.0-stable` |
 | Platform | Linux, amd64 (x86_64) · arm64 (AArch64) |
 | Application ID | `com.vritrasec.glitch` |
 | CLI binary | `glitch` |
@@ -74,7 +74,7 @@ Unlike chat-first terminal wrappers, Glitch runs your **native system shell** (b
 
 <div align="center">
   <img src="https://glitch.vritrasec.com/assets/img/terminal/glitch-screenshot.png" alt="Glitch AI Engine terminal with integrated AI panel" width="920">
-  <p><sub>v0.8.5-stable, live shell session with workspace-aware AI diagnostics</sub></p>
+  <p><sub>v0.9.0-stable, live shell session with workspace-aware AI diagnostics</sub></p>
 </div>
 
 </details>
@@ -112,6 +112,8 @@ Unlike chat-first terminal wrappers, Glitch runs your **native system shell** (b
 | **Chat mode** | General workspace assistance with streaming responses and session memory. |
 | **Shell mode** | Command-output analysis via `/shell` for logs, build failures, and runtime errors. |
 | **File context** | Attach workspace files with `@filename` mentions in the AI panel. |
+| **Run in terminal** | AI markdown/bash code blocks include **Run** (feed into the active pane) and **Copy**. |
+| **7-day history** | Local chat history kept for 7 days, shown with Today / Yesterday / date headers. |
 
 Documentation: [AI Assistant](https://glitch.vritrasec.com/docs/ai-assistant/) · [Send to AI guide](https://glitch.vritrasec.com/docs/ai-assistant/#send-to-ai)
 
@@ -119,14 +121,27 @@ Documentation: [AI Assistant](https://glitch.vritrasec.com/docs/ai-assistant/) �
 
 | Capability | Description |
 |------------|-------------|
-| Native shell | Runs your real login shell, not a simulated environment |
+| Preferred shell | Pick bash, zsh, or any entry from `/etc/shells` in Settings → Terminal (also used for AI context) |
 | Tabs & splits | Multi-tab layout with horizontal and vertical split panes |
 | Session restore | Tabs, split tree, working directories, and themes persist across restarts |
-| Command Palette | 18 system-administration quick commands (`Ctrl`+`Shift`+`P`) |
+| Find in Terminal | Search scrollback with `Ctrl`+`Shift`+`F`; next/previous via `F3` / `Shift`+`F3` |
+| Command Palette | Editable quick-command snippets (`Ctrl`+`Shift`+`P`); manage in Settings → Quick Commands |
 | Themes | 10 curated palettes including Vritra Matrix (default) and Ghost Glitch |
-| Productivity | 5,000-line scrollback · clickable hyperlinks · read-only and full-screen modes |
+| Custom background | Solid color or wallpaper — Your images gallery plus 16 built-in presets |
+| Terminal prefs | Opacity slider, configurable scrollback, and soft cursor blink that does not abort selection |
+| Productivity | Clickable hyperlinks · read-only and full-screen modes |
 
 Documentation: [Features](https://glitch.vritrasec.com/docs/features/) · [Keyboard shortcuts](https://glitch.vritrasec.com/docs/keyboard-shortcuts/) · [Command Palette](https://glitch.vritrasec.com/docs/command-palette/)
+
+### What's new in v0.9.0
+
+- Built-in wallpaper gallery (16 presets) and Your images import under Custom Background
+- Settings → Terminal: preferred shell, opacity, and scrollback
+- Find in Terminal (`Ctrl`+`Shift`+`F`)
+- Soft cursor blink that pauses during text selection
+- Editable Command Palette snippets
+- AI Run-from-code-block into the active terminal
+- 7-day AI chat history with date headers
 
 ---
 
@@ -156,13 +171,13 @@ Official builds are distributed via the VritraSec CDN.
 
 | Architecture | Debian package | Standalone binary |
 |:------------:|:--------------|:-----------------|
-| **amd64** | [glitch_0.8.5_amd64.deb](https://cdn.vritrasec.com/glitch/amd64/glitch_0.8.5_amd64.deb) | [glitch-v0.8.5-linux-amd64](https://cdn.vritrasec.com/glitch/amd64/glitch-v0.8.5-linux-amd64) |
-| **arm64** | [glitch_0.8.5_arm64.deb](https://cdn.vritrasec.com/glitch/arm64/glitch_0.8.5_arm64.deb) | [glitch-v0.8.5-linux-arm64](https://cdn.vritrasec.com/glitch/arm64/glitch-v0.8.5-linux-arm64) |
+| **amd64** | [glitch_0.9.0_amd64.deb](https://cdn.vritrasec.com/glitch/amd64/glitch_0.9.0_amd64.deb) | [glitch-v0.9.0-linux-amd64](https://cdn.vritrasec.com/glitch/amd64/glitch-v0.9.0-linux-amd64) |
+| **arm64** | [glitch_0.9.0_arm64.deb](https://cdn.vritrasec.com/glitch/arm64/glitch_0.9.0_arm64.deb) | [glitch-v0.9.0-linux-arm64](https://cdn.vritrasec.com/glitch/arm64/glitch-v0.9.0-linux-arm64) |
 
 **Quick install (amd64 .deb):**
 
 ```bash
-sudo dpkg -i glitch_0.8.5_amd64.deb
+sudo dpkg -i glitch_0.9.0_amd64.deb
 glitch -v
 ```
 
@@ -188,7 +203,7 @@ Feedback is welcome. Before submitting an issue, consult the [documentation](htt
 <summary><strong>Bug report template</strong></summary>
 
 ```markdown
-**Version:** v0.8.5-stable
+**Version:** v0.9.0-stable
 **OS / distribution:** e.g. Kali Linux, Ubuntu 24.04
 **Architecture:** amd64 / arm64
 **Install method:** .deb / binary
@@ -283,7 +298,7 @@ How this benefits Linux terminal users.
 |-------------|---------------|
 | Operating system | Linux (Debian-based distributions recommended for `.deb` installs) |
 | Architecture | amd64 (x86_64) or arm64 (AArch64) |
-| Shell | bash, zsh, or any configured login shell |
+| Shell | bash, zsh, or any shell listed in `/etc/shells` (preferred shell in Settings → Terminal) |
 | Glitch AI | Valid Gemini API key, configured under **Settings → AI Core Setup** |
 | Desktop environment | GTK4 / libadwaita compatible display server |
 
@@ -296,7 +311,7 @@ How this benefits Linux terminal users.
 | **Developer** | Alex Butler |
 | **Organization** | [Vritra Security Organization](https://vritrasec.com) |
 | **Product** | Glitch AI Engine |
-| **Current release** | v0.8.5-stable, initial stable release |
+| **Current release** | v0.9.0-stable |
 
 ---
 
